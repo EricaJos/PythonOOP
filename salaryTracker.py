@@ -5,12 +5,13 @@ class Employee:
         'mid-level': 3000,
         'senior': 4000,
     }
+
     def __init__(self, name, level):
-        if not (isinstance(name, str) and isinstance(level, str)):
-            raise TypeError("'name' and 'level' attribute must be of type 'str'.")
+        if not isinstance(level, str):
+            raise TypeError("'level' attribute must be of type 'str'.")
         if level not in Employee._base_salaries:
             raise ValueError(f"Invalid value '{level}' for 'level' attribute.")
-        self._name = name
+        self.name = name
         self._level = level
         self._salary = Employee._base_salaries[level]
 
@@ -26,8 +27,11 @@ class Employee:
 
     @name.setter
     def name(self, new_name):
+        if not isinstance(new_name, str):
+            raise TypeError("'name' must be a string.")
         self._name = new_name
-        
+        print(f"'name' updated to '{self.name}'.")
+
     @property
     def level(self):
         return self._level
@@ -36,7 +40,7 @@ class Employee:
     def salary(self):
         return self._salary
 
-
 charlie_brown = Employee('Charlie Brown', 'trainee')
 print(charlie_brown)
 print(f'Base salary: ${charlie_brown.salary}')
+charlie_brown.name = 'Snoopy'
