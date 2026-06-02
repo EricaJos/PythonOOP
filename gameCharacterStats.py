@@ -36,7 +36,18 @@ class GameCharacter:
 
 #For the mana property:
 #Define a getter that returns the current mana.
+    @property
+    def mana(self):
+        return self._mana
 #Define a setter that prevents mana from being set below 0, and caps the mana at 50.
+    @mana.setter
+    def mana(self, mana):
+        if mana < 0:
+            self._mana = 0
+        elif mana > 50:
+            self._mana = 50
+        else:
+            self._mana = mana
 
 #Create a getter for level to return the character's current level.
 
