@@ -18,7 +18,6 @@ class GameCharacter:
     @property
     def name(self):
         return self._name
-
 #For the health property:
 #Define a getter that returns the current health.
     @property
@@ -33,6 +32,7 @@ class GameCharacter:
             self._health = 100
         else:
             self._health = health
+    
 
 #For the mana property:
 #Define a getter that returns the current mana.
@@ -62,10 +62,11 @@ class GameCharacter:
         self.health = 100
         self.mana = 50
         print(f"{self.name} leveled up to {self.level}!")
-        
-#Define a __str__ method that returns a formatted string including:
 
+#Define a __str__ method that returns a formatted string including:
+    def __str__(self):
 #The character's name.
 #The character's level.
 #The character's current health.
 #The character's current mana.
+        return(f"Name: {self.name}\nLevel: {self.level}\nHealth: {self.health}\nMana: {self.mana}")
