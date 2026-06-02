@@ -21,11 +21,18 @@ class GameCharacter:
 
 #For the health property:
 #Define a getter that returns the current health.
-#Define a setter that prevents health from being set below 0, and caps the health at 100.
     @property
     def health(self):
         return self._health
-
+#Define a setter that prevents health from being set below 0, and caps the health at 100.
+    @health.setter
+    def health(self, health):
+        if health < 0:
+            self._health = 0
+        elif health > 100:
+            self._health = 100
+        else:
+            self._health = health
 
 #For the mana property:
 #Define a getter that returns the current mana.
