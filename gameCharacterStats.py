@@ -15,13 +15,17 @@ class GameCharacter:
         self._level = 1
 
 #Create a name property for read-only access to the character's name.
-@property
-def name(self):
-    return self._name
+    @property
+    def name(self):
+        return self._name
 
 #For the health property:
 #Define a getter that returns the current health.
 #Define a setter that prevents health from being set below 0, and caps the health at 100.
+    @property
+    def health(self):
+        return self._health
+
 
 #For the mana property:
 #Define a getter that returns the current mana.
