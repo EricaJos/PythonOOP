@@ -7,6 +7,13 @@
 #_mana set to 50
 #_level set to 1
 
+class GameCharacter:
+    def __init__(self,name):
+        self._name = name
+        self._health = 100
+        self._mana = 50
+        self._level = 1
+
 #Create a name property for read-only access to the character's name.
 
 #For the health property:
