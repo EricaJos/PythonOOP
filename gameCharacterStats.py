@@ -50,15 +50,19 @@ class GameCharacter:
             self._mana = mana
 
 #Create a getter for level to return the character's current level.
-
+    @property
+    def level(self):
+        return self._level
 #Define a method named level_up that:
-
+    def level_up(self):
 #Increases the character's level by 1.
-
 #Resets health to 100 and mana to 50 using their corresponding property setters.
-
 #Prints a message in the form of <name> leveled up to <level>! (where <name> and <level> should be replaced by the character's name and new level, respectively).
-
+        self._level +=1
+        self.health = 100
+        self.mana = 50
+        print(f"{self.name} leveled up to {self.level}!")
+        
 #Define a __str__ method that returns a formatted string including:
 
 #The character's name.
